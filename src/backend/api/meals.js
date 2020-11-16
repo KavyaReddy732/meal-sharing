@@ -105,7 +105,7 @@ router.put("/:id", async (request, response) => {
   try {
     const meals = await knex("meal")
     .where({id: parseInt(request.params.id)})
-    .update({ title: "shushi",
+    .update({ title: "japanese food",
     description: "enjoy the auroma of sushi",
     location: "carlsberg, copenhagen",
     when: "2020-12-08 19:10:00",
