@@ -1,5 +1,5 @@
 const express = require("express");
-// const { from } = require("../../../../node.js/week3/exercise-template/src/backend/database");
+const { from } = require("../../../../node.js/week3/exercise-template/src/backend/database");
 const router = express.Router();
 const knex = require("../database");
 
@@ -105,7 +105,7 @@ router.put("/:id", async (request, response) => {
   try {
     const meals = await knex("meal")
     .where({id: parseInt(request.params.id)})
-    .update({ title: "japanese food",
+    .update({ title: "shushi",
     description: "enjoy the auroma of sushi",
     location: "carlsberg, copenhagen",
     when: "2020-12-08 19:10:00",
