@@ -1,5 +1,4 @@
 const express = require("express");
-const { from } = require("../../../../node.js/week3/exercise-template/src/backend/database");
 const router = express.Router();
 const knex = require("../database");
 
