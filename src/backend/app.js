@@ -4,7 +4,7 @@ const router = express.Router();
 const path = require("path");
 
 const mealsRouter = require("./api/meals");
-const reservationRouter = require("./api/reservarions");
+const reservationRouter = require("./api/reservations");
 const reviewsRouter = require("./api/reviews");
 
 const buildPath = path.join(__dirname, "../../dist");
