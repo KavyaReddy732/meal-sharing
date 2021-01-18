@@ -1,5 +1,4 @@
 const express = require("express");
-const { from } = require("../../../../node.js/week3/exercise-template/src/backend/database");
 const router = express.Router();
 const knex = require("../database");
 
@@ -11,22 +10,17 @@ router.get("/", async (request, response) => {
       throw error;
     }
   });
-router.post("/", async (request, response) => {
+  router.post("/", async (request, response) => {
     try {
       const reservations = await knex("reservation")
-      .insert({
-        number_of_guests: 3,
-        meal_id: 6,
-        created_date: "2020-11-14 22:00:00",
-        contact_phonenumber: "67453765",
-        contact_name: "vinnu",
-        contact_email: "vinnu92@gmail.com"
-      });
+      .insert(request.body);
+      console.log(reservations)
       response.json(reservations);
     } catch (error) {
       throw error;
     }
   });
+
   
   router.get("/:id", async (request, response) => {
     try {

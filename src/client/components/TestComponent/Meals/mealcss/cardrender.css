@@ -1,0 +1,24 @@
+.grid-container {
+  border-radius: 25px;
+  border:1px outset rgb(26, 21, 23);
+  width: 380px;
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(217, 241, 230);
+  height: 200px;
+  margin: 20px;
+  margin-left: 35%;
+}
+
+.grid-container .button{
+  margin: -10px;
+}
+
+.reviewcontainer{
+  margin: 50px;
+  width: 400px;
+  height: 300px;
+}
+.reviewcontainer input{
+margin-right: 150px;
+}

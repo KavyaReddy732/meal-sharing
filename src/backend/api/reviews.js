@@ -1,5 +1,4 @@
 const express = require("express");
-const { from } = require("../../../../node.js/week3/exercise-template/src/backend/database");
 const router = express.Router();
 const knex = require("../database");
 
@@ -14,13 +13,7 @@ router.get("/", async (request, response) => {
 router.post("/", async (request, response) => {
     try {
       const reviews = await knex("review")
-      .insert({
-        title: "softly cooked pasta",
-        description: "nice food",
-        meal_id: 5,
-        stars: 4,
-        created_date: "2020-11-09 22:00:00"
-      });
+      .insert(request.body);
       response.json(reviews);
     } catch (error) {
       throw error;

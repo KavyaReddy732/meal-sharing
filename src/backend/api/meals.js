@@ -1,7 +1,16 @@
 const express = require("express");
-const { from } = require("../../../../node.js/week3/exercise-template/src/backend/database");
 const router = express.Router();
 const knex = require("../database");
+
+router.get("/", async (request, response) => {
+  try {
+    // knex syntax for selecting things. Look up the documentation for knex for further info
+    const titles = await knex("meal").select("*");
+    response.send(titles);
+  } catch (error) {
+    throw error;
+  }
+});
 
 router.get("/", async (request, response) => {
   if(request.query.maxPrice){
@@ -93,9 +102,9 @@ router.post("/", async (request, response) => {
 
 router.get("/:id", async (request, response) => {
   try {
-    const meals = await knex("meal")
+    const meals = await knex("meal").select('title')
     .where({id: parseInt(request.params.id)});
-    response.json(meals);
+    response.send(meals);
   } catch (error) {
     throw error;
   }
